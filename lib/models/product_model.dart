@@ -3,7 +3,7 @@ import 'package:store_app/models/rating_model.dart';
 class ProductModel {
   final int id;
   final String title;
-  final double price;
+  final String price;
   final String description;
   final String category;
   final String image;
@@ -21,7 +21,7 @@ class ProductModel {
   factory ProductModel.fromJson(Map<String, dynamic> json) => ProductModel(
         id: json["id"],
         title: json["title"],
-        price: json["price"].toDouble(),
+        price: json["price"].toString(),
         description: json["description"],
         category: json["category"],
         image: json["image"],
