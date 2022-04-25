@@ -23,22 +23,20 @@ class CustomStack extends StatelessWidget {
               ),
             ],
           ),
-          width: 250,
-          height: 150,
           child: Card(
               elevation: 15,
               color: Colors.white,
               child: Padding(
-                padding: const EdgeInsets.all(10.0),
+                padding: const EdgeInsets.only(
+                    top: 20, bottom: 5, left: 10, right: 10),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   mainAxisAlignment: MainAxisAlignment.end,
                   children: [
                     Text(
                       'Product1',
-                      style: TextStyle(color: Colors.grey, fontSize: 16),
+                      style: TextStyle(color: Colors.grey, fontSize: 14),
                     ),
-                    SizedBox(height: 10),
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
@@ -61,8 +59,8 @@ class CustomStack extends StatelessWidget {
             height: 100,
             width: 100,
           ),
-          top: -40,
-          left: 140,
+          top: -70,
+          right: 10,
         ),
       ],
     );
