@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:store_app/models/product_model.dart';
 
-class CustomStack extends StatelessWidget {
-  CustomStack({Key? key}) : super(key: key);
+class CustomCard extends StatelessWidget {
+  CustomCard({Key? key, required this.product}) : super(key: key);
+  ProductModel product;
 
   @override
   Widget build(BuildContext context) {
@@ -34,15 +36,20 @@ class CustomStack extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.end,
                   children: [
                     Text(
-                      'Product1',
-                      style: TextStyle(color: Colors.grey, fontSize: 14),
+                      '${product.title}',
+                      maxLines: 2,
+                      style: TextStyle(
+                        color: Colors.grey,
+                        fontSize: 14,
+                      ),
                     ),
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
-                        Text('200 \$',
-                            style:
-                                TextStyle(color: Colors.black, fontSize: 24)),
+                        Text(
+                          '\$${product.price}',
+                          style: TextStyle(color: Colors.black, fontSize: 22),
+                        ),
                         IconButton(
                           icon: Icon(FontAwesomeIcons.heart, color: Colors.red),
                           onPressed: () {},
@@ -55,7 +62,7 @@ class CustomStack extends StatelessWidget {
         ),
         Positioned(
           child: Image.network(
-            'https://fakestoreapi.com/img/71-3HjGNDUL._AC_SY879._SX._UX._SY._UY_.jpg',
+            product.image,
             height: 100,
             width: 100,
           ),
